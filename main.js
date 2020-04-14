@@ -1,5 +1,5 @@
-const todos = document.getElementById('todo-list');
-// console.log(todos);
+const todoList = document.getElementById('todo-list');
+// console.log(todoList);
 
 const newItemInput = document.getElementById("new-item-input");
 
@@ -10,33 +10,30 @@ button.onclick = () => {
     const newTodo = newItemInput.value;
     if (newTodo){
         button.setAttribute("disabled",true);
-
+        
+       
         setTimeout(() =>{
             const newLi = document.createElement("li");
-            newLi.setAttribute("id","li");
             newLi.innerText = newTodo;
-            todos.appendChild(newLi);
+            todoList.appendChild(newLi);
             button.removeAttribute("disabled");
             newItemInput.value = "";
-
+            
         }, 500);
-
-
     }
-}
-todos.onclick = () => {
-
-    const element = document.getElementById("li");
-    element.parentNode.removeChild(element);
-
+  
 }
 
-// let li = document.getElementById('li');
-// todos.onclick = () => {
+document.getElementById("todo-list").addEventListener("click",function(e){
+    var tgt = e.target;
+    // var tgt = e.target;
+        if (tgt.tagName.toUpperCase() == "LI") {
+          tgt.parentNode.removeChild(tgt); // or tgt.remove();
+        }
 
-//     var element = document.getElementById("li");
-//     element.parentNode.removeChild(element);
+});
 
-// }
+
+
 
 
