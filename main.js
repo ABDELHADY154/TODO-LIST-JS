@@ -26,9 +26,8 @@ button.onclick = () => {
 
 document.getElementById("todo-list").addEventListener("click",function(e){
     var tgt = e.target;
-    // var tgt = e.target;
         if (tgt.tagName.toUpperCase() == "LI") {
-          tgt.parentNode.removeChild(tgt); // or tgt.remove();
+          tgt.parentNode.removeChild(tgt);
         }
 
 });
